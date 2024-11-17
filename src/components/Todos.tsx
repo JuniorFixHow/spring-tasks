@@ -68,6 +68,7 @@ const Todos = () => {
             <New currentTodo={currentTodo} setCurrentTodo={setCurrentTodo} open={open} setOpen={setOpen} />
             <div className="flex flex-col gap-4">
                 {
+                    SearchTodo(tasks, serach).length ?
                     SearchTodo(tasks, serach).map((todo)=>(
                         <div key={todo.idd}  className="flex px-4 py-2 flex-col gap-2 rounded bg-white shadow">
                             <span onClick={()=>handleClickTodo(todo)}  className={`${todo.isCompleted ? 'line-through':'underline'} font-bold hover:text-blue-600 cursor-pointer w-fit`} >{todo.title}</span>
@@ -92,6 +93,10 @@ const Todos = () => {
                             }
                         </div>
                     ))
+                    :
+                    <div className="flex grow items-center justify-center">
+                        <h1 className="text-center" >No tasks available</h1>
+                    </div>
                 }
             </div>
         </div>

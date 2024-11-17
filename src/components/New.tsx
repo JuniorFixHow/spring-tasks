@@ -75,7 +75,7 @@ const New = ({currentTodo, setCurrentTodo, open, setOpen}:ModalProps) => {
                 userId:currentTodo?.userId,
             }
             await axios.put(`${API}/${currentTodo?.idd}`, data);
-            setMessage({error:false, message:"Successfully added"})
+            setMessage({error:false, message:"Successfully updated"})
             formRef.current?.reset();
         } catch (error) {
             setMessage({error:true, message:"Error occured"})

@@ -14,7 +14,7 @@ export const useFetch=()=>{
             if(user){
                 const res = await axios.get(`${API}/user/${user.id}`)
                 const data = res.data as TodoProps[];
-                setTasks(data.sort((a, b)=>new Date(a.createdAt)> new Date(b.createdAt)? -1:1));
+                setTasks(data.sort((a, b)=>new Date(a.start)> new Date(b.start)? -1:1));
             }
            } catch (error) {
             console.log(error)
