@@ -12,6 +12,7 @@ import java.util.Date;
 
 @Document(collection = "todos")
 @Data
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class Todo {
